@@ -2,13 +2,13 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # локальний шлях до файлів
 
-SUBSCRIPTIONS_PAGE = f"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests/header-menu/subscriptions.html"
-INDEX_PAGE = f"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests/index.html"
+SUBSCRIPTIONS_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests/header-menu/subscriptions.html"
+INDEX_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests/index.html"
 
 
 # 1. Позитивний тест: Оформлення підписки
@@ -16,8 +16,8 @@ def test_successful_subscription():
     driver = webdriver.Chrome()
     driver.get(SUBSCRIPTIONS_PAGE)
 
-    # Очікування завантаження випадаючого списку "faculty"
-    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "faculty")))
+    # # Очікування завантаження випадаючого списку "faculty"
+    # WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "faculty")))
 
     faculty_dropdown = Select(driver.find_element(By.ID, "faculty"))
     faculty_dropdown.select_by_visible_text("Факультет комп’ютерних наук")
