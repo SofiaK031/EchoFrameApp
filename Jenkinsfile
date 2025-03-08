@@ -17,7 +17,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                cd smokeTests_Prof_pr_5/tests
+                cd tests
                 pytest smokeTests.py --maxfail=1 --tb=short
                 '''
             }
