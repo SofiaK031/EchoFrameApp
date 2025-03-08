@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as EC
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # локальний шлях до файлів
 
@@ -32,6 +32,9 @@ def test_successful_subscription():
     category_dropdown = Select(driver.find_element(By.ID, "category"))
     category_dropdown.select_by_visible_text("Працевлаштування")
     driver.find_element(By.ID, "submitSubscription").click()
+
+    # Очікуємо появи alert
+    WebDriverWait(driver, 5).until(EC.alert_is_present())
     alert = driver.switch_to.alert
     assert "Підписку оформлено!" in alert.text
     alert.accept()
