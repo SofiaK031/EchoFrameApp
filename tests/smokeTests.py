@@ -1,4 +1,6 @@
 import os
+from telnetlib import EC
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -8,6 +10,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # локальний шлях до файлів
 SUBSCRIPTIONS_PAGE = f"file://{PROJECT_ROOT}/header-menu/subscriptions.html"
 INDEX_PAGE = f"file://{PROJECT_ROOT}/index.html"
+
 
 # 1. Позитивний тест: Оформлення підписки
 def test_successful_subscription():
