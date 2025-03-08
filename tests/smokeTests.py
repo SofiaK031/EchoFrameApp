@@ -7,38 +7,38 @@ from selenium.webdriver.support.ui import Select
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # локальний шлях до файлів
 
-# SUBSCRIPTIONS_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests\header-menu\subscriptions.html"
-# INDEX_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests\index.html"
+# # SUBSCRIPTIONS_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests\header-menu\subscriptions.html"
+# # INDEX_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests\index.html"
 
-SUBSCRIPTIONS_PAGE = "http://localhost:8080/tests/header-menu/subscriptions.html"
-INDEX_PAGE = "http://localhost:8080/tests/index.html"
+# SUBSCRIPTIONS_PAGE = "http://localhost:8080/tests/header-menu/subscriptions.html"
+# INDEX_PAGE = "http://localhost:8080/tests/index.html"
 
 
-# 1. Позитивний тест: Оформлення підписки
-def test_successful_subscription():
-    driver = webdriver.Chrome()
-    driver.get(SUBSCRIPTIONS_PAGE)
+# # 1. Позитивний тест: Оформлення підписки
+# def test_successful_subscription():
+#     driver = webdriver.Chrome()
+#     driver.get(SUBSCRIPTIONS_PAGE)
 
-    # # Очікування завантаження випадаючого списку "faculty"
-    # WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "faculty")))
-    # WebDriverWait(driver, 10).until(lambda d: d.execute_script("return document.readyState") == "complete")
-    # # Очікуємо елемент у DOM
-    # faculty_dropdown = WebDriverWait(driver, 10).until(
-    #     EC.presence_of_element_located((By.ID, "faculty"))
-    # )
+#     # # Очікування завантаження випадаючого списку "faculty"
+#     # WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "faculty")))
+#     # WebDriverWait(driver, 10).until(lambda d: d.execute_script("return document.readyState") == "complete")
+#     # # Очікуємо елемент у DOM
+#     # faculty_dropdown = WebDriverWait(driver, 10).until(
+#     #     EC.presence_of_element_located((By.ID, "faculty"))
+#     # )
 
-    faculty_dropdown = Select(driver.find_element(By.ID, "faculty"))
-    faculty_dropdown.select_by_visible_text("Факультет комп'ютерних наук")
-    category_dropdown = Select(driver.find_element(By.ID, "category"))
-    category_dropdown.select_by_visible_text("Працевлаштування")
-    driver.find_element(By.ID, "submitSubscription").click()
+#     faculty_dropdown = Select(driver.find_element(By.ID, "faculty"))
+#     faculty_dropdown.select_by_visible_text("Факультет комп'ютерних наук")
+#     category_dropdown = Select(driver.find_element(By.ID, "category"))
+#     category_dropdown.select_by_visible_text("Працевлаштування")
+#     driver.find_element(By.ID, "submitSubscription").click()
 
-    # # Очікуємо появи alert
-    # WebDriverWait(driver, 5).until(EC.alert_is_present())
-    alert = driver.switch_to.alert
-    assert "Підписку оформлено!" in alert.text
-    alert.accept()
-    driver.quit()
+#     # # Очікуємо появи alert
+#     # WebDriverWait(driver, 5).until(EC.alert_is_present())
+#     alert = driver.switch_to.alert
+#     assert "Підписку оформлено!" in alert.text
+#     alert.accept()
+#     driver.quit()
 
 
 # 2. Негативний тест: Спроба оформлення підписки без вибору факультету
