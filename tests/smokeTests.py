@@ -7,11 +7,11 @@ from selenium.webdriver.support.ui import Select
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # локальний шлях до файлів
 
-# # SUBSCRIPTIONS_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests\header-menu\subscriptions.html"
-# # INDEX_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests\index.html"
+# SUBSCRIPTIONS_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests\header-menu\subscriptions.html"
+# INDEX_PAGE = r"file://C:\ProgramData\Jenkins\.jenkins\workspace\EchoFrameApp\tests\index.html"
 
-# SUBSCRIPTIONS_PAGE = "http://localhost:8080/tests/header-menu/subscriptions.html"
-# INDEX_PAGE = "http://localhost:8080/tests/index.html"
+SUBSCRIPTIONS_PAGE = "http://localhost:8080/tests/header-menu/subscriptions.html"
+INDEX_PAGE = "http://localhost:8080/tests/index.html"
 
 
 # # 1. Позитивний тест: Оформлення підписки
