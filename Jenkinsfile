@@ -10,13 +10,13 @@ pipeline {
         
         stage('Setup Environment') {
             steps {
-                sh 'pip3 install selenium pytest'
+                bat 'pip install selenium pytest'
             }
         }
         
         stage('Run Tests') {
             steps {
-                sh '''
+                bat '''
                 cd tests
                 pytest smokeTests.py --maxfail=1 --tb=short
                 '''
