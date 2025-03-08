@@ -2,8 +2,8 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # локальний шлях до файлів
 
@@ -54,14 +54,32 @@ INDEX_PAGE = "http://localhost:8080/tests/index.html"
 
 
 # 3. Позитивний тест: Авторизація користувача
-def test_login_modal_appears():
-    driver = webdriver.Chrome()
+# def test_login_modal_appears():
+#     driver = webdriver.Chrome()
 
-    print(f"Opening URL: {INDEX_PAGE}")
-    driver.get(INDEX_PAGE)
+#     print(f"Opening URL: {INDEX_PAGE}")
+#     driver.get(INDEX_PAGE)
     
-    driver.get(INDEX_PAGE)
-    driver.find_element(By.CLASS_NAME, "login-btn").click()
-    modal = driver.find_element(By.CLASS_NAME, "modal-window")
+#     driver.get(INDEX_PAGE)
+#     driver.find_element(By.CLASS_NAME, "login-btn").click()
+#     modal = driver.find_element(By.CLASS_NAME, "modal-window")
+#     assert modal.is_displayed()
+#     driver.quit()
+
+# Очікуємо повного завантаження сторінки
+    WebDriverWait(driver, 10).until(lambda d: d.execute_script("return document.readyState") == "complete")
+
+    # Очікуємо, поки кнопка стане клікабельною
+    login_btn = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.CLASS_NAME, "login-btn"))
+    )
+    login_btn.click()
+
+    # Очікуємо появи модального вікна
+    modal = WebDriverWait(driver, 5).until(
+        EC.visibility_of_element_located((By.CLASS_NAME, "modal-window"))
+    )
+
     assert modal.is_displayed()
+
     driver.quit()
