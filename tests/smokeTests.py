@@ -20,7 +20,7 @@ def test_successful_subscription():
     # WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "faculty")))
 
     faculty_dropdown = Select(driver.find_element(By.ID, "faculty"))
-    faculty_dropdown.select_by_visible_text("Факультет комп’ютерних наук")
+    faculty_dropdown.select_by_visible_text("Факультет комп'ютерних наук")
     category_dropdown = Select(driver.find_element(By.ID, "category"))
     category_dropdown.select_by_visible_text("Працевлаштування")
     driver.find_element(By.ID, "submitSubscription").click()
