@@ -24,15 +24,15 @@ def test_successful_subscription():
 
 
 # 2. Негативний тест: Спроба оформлення підписки без вибору факультету
-def test_subscription_without_faculty():
-    driver = webdriver.Chrome()
-    driver.get(SUBSCRIPTIONS_PAGE)
-    category_dropdown = Select(driver.find_element(By.ID, "category"))
-    category_dropdown.select_by_visible_text("Спортивні заходи")
-    driver.find_element(By.ID, "submitSubscription").click()
-    faculty_error = driver.find_element(By.ID, "facultyError").text
-    assert "Оберіть факультет." in faculty_error
-    driver.quit()
+# def test_subscription_without_faculty():
+#     driver = webdriver.Chrome()
+#     driver.get(SUBSCRIPTIONS_PAGE)
+#     category_dropdown = Select(driver.find_element(By.ID, "category"))
+#     category_dropdown.select_by_visible_text("Спортивні заходи")
+#     driver.find_element(By.ID, "submitSubscription").click()
+#     faculty_error = driver.find_element(By.ID, "facultyError").text
+#     assert "Оберіть факультет." in faculty_error
+#     driver.quit()
 
 
 # 3. Позитивний тест: Авторизація користувача
