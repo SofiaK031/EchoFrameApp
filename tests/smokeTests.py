@@ -45,6 +45,10 @@ INDEX_PAGE = f"file://{PROJECT_ROOT}/index.html"
 # 3. Позитивний тест: Авторизація користувача
 def test_login_modal_appears():
     driver = webdriver.Chrome()
+
+    print(f"Opening URL: {INDEX_PAGE}")
+    driver.get(INDEX_PAGE)
+    
     driver.get(INDEX_PAGE)
     driver.find_element(By.CLASS_NAME, "login-btn").click()
     modal = driver.find_element(By.CLASS_NAME, "modal-window")
