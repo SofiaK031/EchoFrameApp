@@ -66,7 +66,12 @@ INDEX_PAGE = "http://localhost:8080/tests/index.html"
 #     assert modal.is_displayed()
 #     driver.quit()
 
-# Очікуємо повного завантаження сторінки
+
+def test_login_modal_appears():
+    driver = webdriver.Chrome()
+    driver.get(INDEX_PAGE)
+    
+    # Очікуємо повного завантаження сторінки
     WebDriverWait(driver, 10).until(lambda d: d.execute_script("return document.readyState") == "complete")
 
     # Очікуємо, поки кнопка стане клікабельною
