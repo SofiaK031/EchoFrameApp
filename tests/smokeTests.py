@@ -76,26 +76,27 @@ INDEX_PAGE = "https://github.com/SofiaK031/EchoFrameApp/blob/main/index.html"
 
 
 def test_login_modal_appears():
-    driver = webdriver.Chrome()
-    driver.get(INDEX_PAGE)
-    
-    # Очікуємо повного завантаження сторінки
+    # driver = webdriver.Chrome()
+    # driver.get(INDEX_PAGE)
+    # # Очікуємо повного завантаження сторінки
     # WebDriverWait(driver, 10).until(lambda d: d.execute_script("return document.readyState") == "complete")
-
-    # Очікуємо, поки кнопка стане клікабельною
+    # # Очікуємо, поки кнопка стане клікабельною
     # login_btn = WebDriverWait(driver, 10).until(
     #     EC.element_to_be_clickable((By.CLASS_NAME, "login-btn"))
     # )
     # login_btn.click()
-    
     login_btn.click()
-    
+    # # Очікуємо появи модального вікна
+    # modal = WebDriverWait(driver, 5).until(
+    #     EC.visibility_of_element_located((By.CLASS_NAME, "modal-window"))
+    # )
+    # assert modal.is_displayed()
+    # driver.quit()
 
-    # Очікуємо появи модального вікна
-    modal = WebDriverWait(driver, 5).until(
-        EC.visibility_of_element_located((By.CLASS_NAME, "modal-window"))
-    )
 
+    driver = webdriver.Chrome()
+    driver.get(INDEX_PAGE)
+    driver.find_element(By.CLASS_NAME, "login-btn").click()
+    modal = driver.find_element(By.CLASS_NAME, "modal-window")
     assert modal.is_displayed()
-
     driver.quit()
