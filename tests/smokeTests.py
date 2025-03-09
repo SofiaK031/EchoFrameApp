@@ -2,8 +2,8 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # локальний шлях до файлів
 
@@ -80,17 +80,14 @@ def test_login_modal_appears():
     driver.get(INDEX_PAGE)
     
     # Очікуємо повного завантаження сторінки
-    WebDriverWait(driver, 10).until(lambda d: d.execute_script("return document.readyState") == "complete")
+    # WebDriverWait(driver, 10).until(lambda d: d.execute_script("return document.readyState") == "complete")
 
     # Очікуємо, поки кнопка стане клікабельною
     # login_btn = WebDriverWait(driver, 10).until(
     #     EC.element_to_be_clickable((By.CLASS_NAME, "login-btn"))
     # )
     # login_btn.click()
-
-    login_btn = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "login-btn"))
-    )
+    
     login_btn.click()
     
 
