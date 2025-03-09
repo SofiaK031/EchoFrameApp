@@ -16,6 +16,11 @@ INDEX_PAGE = "http://localhost:8080/tests/index.html"
 # SUBSCRIPTIONS_PAGE = "https://incomparable-sunshine-25eab8.netlify.app/header-menu/subscriptions.html"
 # INDEX_PAGE = "https://incomparable-sunshine-25eab8.netlify.app/index.html"
 
+SUBSCRIPTIONS_PAGE = "https://github.com/SofiaK031/EchoFrameApp/edit/main/header-menu/subscriptions.html"
+INDEX_PAGE = "https://github.com/SofiaK031/EchoFrameApp/blob/main/index.html"
+
+
+
 
 # # 1. Позитивний тест: Оформлення підписки
 # def test_successful_subscription():
