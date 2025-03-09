@@ -85,7 +85,6 @@ def test_login_modal_appears():
     #     EC.element_to_be_clickable((By.CLASS_NAME, "login-btn"))
     # )
     # login_btn.click()
-    login_btn.click()
     # # Очікуємо появи модального вікна
     # modal = WebDriverWait(driver, 5).until(
     #     EC.visibility_of_element_located((By.CLASS_NAME, "modal-window"))
