@@ -1,1 +1,26 @@
-
+<testsuites name="Jest Tests">
+  <testsuite name="Example Test Suite" tests="3" failures="3" errors="0" skipped="0">
+    
+    <testcase classname="Example Test Suite" name="Vote should be saved in LocalStorage" time="0.038">
+      <failure message="expect(received).not.toBeNull()\n\nReceived: null">
+        AssertionError: expect(received).not.toBeNull()
+        at Object.toBeNull (tests/test.js:57:47)
+      </failure>
+    </testcase>
+    
+    <testcase classname="Example Test Suite" name="Theme toggle should add class dark-theme" time="0.003">
+      <failure message="TypeError: Failed to execute 'dispatchEvent' on 'EventTarget': parameter 1 is not of type 'Event'">
+        TypeError: Failed to execute 'dispatchEvent' on 'EventTarget': parameter 1 is not of type 'Event'
+        at Object.dispatchEvent (tests/test.js:67:17)
+      </failure>
+    </testcase>
+    
+    <testcase classname="Example Test Suite" name="Login form should submit with valid input" time="0.005">
+      <failure message="TypeError: Failed to execute 'dispatchEvent' on 'EventTarget': parameter 1 is not of type 'Event'">
+        TypeError: Failed to execute 'dispatchEvent' on 'EventTarget': parameter 1 is not of type 'Event'
+        at Object.dispatchEvent (tests/test.js:79:17)
+      </failure>
+    </testcase>
+    
+  </testsuite>
+</testsuites>
