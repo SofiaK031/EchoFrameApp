@@ -9,11 +9,12 @@ pipeline {
             }
         }
         
-        stage('Run tests') {
+        stage('Run Tests') {
             steps {
                 bat 'npx jest --ci --reporters=default --reporters=jest-junit'
             }
         }
+
     }
 
     post {
