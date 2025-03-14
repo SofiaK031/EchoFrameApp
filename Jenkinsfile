@@ -1,32 +1,3 @@
-/*
-pipeline {
-    agent any
-
-    stages {
-        stage('Install dependencies') {
-            steps {
-                bat 'npm install'
-            }
-        }
-        
-        stage('Run Tests') {
-            steps {
-                bat 'npx jest --ci --reporters=default --reporters=jest-junit'
-            }
-        }
-
-    }
-
-    post {
-        always {
-            junit 'jest-junit.xml'
-        }
-    }
-}
-*/
-
-
-
 pipeline {
     agent any
 
@@ -45,13 +16,13 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'npx jest --ci --reporters=default --reporters=jest-junit'
+                bat 'npx jest --ci'
             }
         }
 
         stage('Publish Results') {
             steps {
-                junit 'jest-junit.xml'
+                junit 'reports/jest-junit.xml'
             }
         }
     }
