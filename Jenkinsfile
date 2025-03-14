@@ -22,7 +22,7 @@ pipeline {
 
         stage('Publish Results') {
             steps {
-                junit 'reports/jest-junit.xml'
+                junit 'EchoFrameApp_Test_Pipeline/reports/jest-junit.xml'
             }
         }
     }
