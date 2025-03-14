@@ -1,5 +1,11 @@
 const { JSDOM } = require("jsdom");
 const { expect } = require("@jest/globals");
+const fs = require('fs');
+
+afterEach(() => {
+  localStorage.clear();
+  fs.writeFileSync('../reports/jest-junit.xml', 'New test run\n', { flag: 'a' });
+});
 
 // Імітація LocalStorage
 class LocalStorageMock {
